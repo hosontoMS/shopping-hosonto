@@ -1,0 +1,23 @@
+<div id="productContainer">
+	<div mdl-param="__Status" ng-model="__Status">{{__Status}}</div>
+	<img class="fullImg"
+        ng-src="../images/{{product.imagefile}}" />
+   <div class="prodInfo">
+	   <p class="itemTitle">{{product.name}}</p>
+     <p class="prodDesc">{{product.description}}</p>
+     <p class="fullPrice">{{product.price|currency}}</p>
+	   <p class="status">{{product.instock}} available</p>
+	   <input type="hidden" mdl-param="product" ng-model="product" value="{{product}}">
+	   <input type="hidden" mdl-param="__SessionId" ng-model="__SessionId">
+
+	   <p class="cartButton" ng-click="pushData('execevent', 'BL.addToCart')">
+	     Add to Cart 
+	     <img src="/images/cart.png" />
+	   </p>
+   </div>
+	<div>
+    <span class="button" ng-click="setContent('products.html')">
+      Continue Shopping
+    </span>
+	</div>
+</div>

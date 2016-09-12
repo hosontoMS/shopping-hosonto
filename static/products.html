@@ -1,0 +1,12 @@
+<div id="productsContainer" >
+
+  <input type="hidden" ng-model="products" mdl-param="products___" ng-init="pushData('autoLoadData','');"/>
+  <div class="listItem" ng-repeat="product in products">
+    <img class="listImg" ng-click="setProduct(product._id)"
+         ng-src="/images/{{product.imagefile}}" />
+    <span class="prodName">{{product.name}}</span>
+    <span class="price">{{product.price|currency}}</span>
+  </div>
+
+
+</div>

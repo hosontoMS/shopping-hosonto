@@ -1,0 +1,40 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" type="text/css" 
+      href="/static/css/cart_styles.css" />
+</head>
+<body>
+
+  <div ng-controller="shoppingController ">
+    <div ng-controller="myController">
+    <div id="banner">
+      <div id="title">My Store</div>
+      <div id="bar">
+        <span class="orders" 
+          ng-click="setContent('orders.html')">Orders</span>
+        <span id="cartLink" ng-click="setContent('cart.html')">
+          <div ng-model="__Error" mdl-param="__Error">{{__Error}}</div>
+          <input type="hidden" ng-model="customer" mdl-param="customer___"/>
+            {{customer[0].cart.length}}
+          items
+            <img src="/images/cart.png" />
+        </span>
+      </div>
+    </div>
+
+    <div id="main" >
+      <div ng-include="content"></div>
+    </div>
+</div>
+</div>
+
+  <script src="/js/angular/angular.min.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/controllers.js"></script>
+
+  <script src="/js/cart_app.js"></script>
+
+</body>
+</html>
